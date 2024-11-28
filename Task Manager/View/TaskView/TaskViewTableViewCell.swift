@@ -8,16 +8,17 @@
 import UIKit
 
 class TaskViewTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var taskName: UILabel!
+    @IBOutlet weak var taskDate: UILabel!
+    @IBOutlet weak var priority: UIButton!
+    @IBOutlet weak var alarmEnable: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
