@@ -18,17 +18,6 @@
 					<key>UISceneStoryboardFile</key>
 					<string>Main</string>
 				</dict>
-                <key>GIDClientID</key>
-                <string></string>
-                <key>880624567821-rissjt2bh6os7lcil2c9ogtjneso2dku</key>
-                <array>
-                  <dict>
-                    <key>CFBundleURLSchemes</key>
-                    <array>
-                      <string>880624567821-rissjt2bh6os7lcil2c9ogtjneso2dku.apps.googleusercontent.com</string>
-                    </array>
-                  </dict>
-                </array>
 			</array>
 		</dict>
 	</dict>
