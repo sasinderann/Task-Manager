@@ -13,7 +13,7 @@ enum TaskDetailsCoreDataKeys: String {
 }
 
 enum UserCoreDatakeys: String {
-   case userName, userId, userEmail, passWord, accessToken, tokenExpiry, refreshToken, userImageUrl
+   case userName, userId, userEmail, password, accessToken, tokenExpiry, refreshToken, userImageUrl
 }
 
 extension String {

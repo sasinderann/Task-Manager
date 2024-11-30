@@ -37,6 +37,13 @@ class LoginPage : UIViewController {
     }
     
     @IBAction func signBtnClicked(_ sender: Any) {
+        if let userName = userNameField.text, let password = passwordField.text {
+            if viewModel.validateUser(userName: userName, password: password) {
+                self.showToast(message: "Login Success", type: .Success)
+            }
+        } else {
+            self.showToast(message: "Incorrect username or password", type: .Warning)
+        }
         print("---Clicked---r")
     }
     

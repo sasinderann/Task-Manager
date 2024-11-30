@@ -31,7 +31,7 @@ struct UserModel: Codable {
             if let userEmail = json[UserCoreDatakeys.userEmail.rawValue] as? String {
                 userObj.userEmail = userEmail
             }
-            if let passWord = json[UserCoreDatakeys.passWord.rawValue] as? String {
+            if let passWord = json[UserCoreDatakeys.password.rawValue] as? String {
                 userObj.passWord = passWord
             }
             if let accessToken = json[UserCoreDatakeys.accessToken.rawValue] as? String {

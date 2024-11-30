@@ -27,7 +27,7 @@ protocol UserDataProtocol: CoreDataSetupProtocol {
 class UserDataManager : UserDataProtocol {
     
     func getLoggedInUsers() -> [UserModel] {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UserDetailTable")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDetailTable")
         fetchRequest.returnsDistinctResults = true
         fetchRequest.resultType = .dictionaryResultType
         
@@ -52,7 +52,7 @@ class UserDataManager : UserDataProtocol {
             newUser.setValue(usrInfo.userId, forKey: UserCoreDatakeys.userId.rawValue)
             newUser.setValue(usrInfo.userImageUrl, forKey: UserCoreDatakeys.userImageUrl.rawValue)
             newUser.setValue(usrInfo.userName, forKey: UserCoreDatakeys.userName.rawValue)
-            newUser.setValue(usrInfo.passWord, forKey: UserCoreDatakeys.passWord.rawValue)
+            newUser.setValue(usrInfo.passWord, forKey: UserCoreDatakeys.password.rawValue)
             do {
                 try context.save()
                 print("User Data saved successfully!")
@@ -77,7 +77,7 @@ class UserDataManager : UserDataProtocol {
                 user.setValue(usrInfo.userId, forKey: UserCoreDatakeys.userId.rawValue)
                 user.setValue(usrInfo.userImageUrl, forKey: UserCoreDatakeys.userImageUrl.rawValue)
                 user.setValue(usrInfo.userName, forKey: UserCoreDatakeys.userName.rawValue)
-                user.setValue(usrInfo.passWord, forKey: UserCoreDatakeys.passWord.rawValue)
+                user.setValue(usrInfo.passWord, forKey: UserCoreDatakeys.password.rawValue)
             }
             try managedContext?.save()
             print("User updated successfully!")

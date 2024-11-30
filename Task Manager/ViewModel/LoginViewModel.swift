@@ -101,4 +101,21 @@ class LoginViewModel {
         return delegate?.getLoggedInUsers()
     }
     
+    // check with google user name first then check with
+    func validateUser(userName: String, password: String) -> Bool {
+        if let user = getUserFor(userName: userName) {
+            return user.passWord == password
+        }
+        return false
+    }
+    
+    func getUserFor(userName: String) -> UserModel? {
+        if let allUsers = getUserDetails() {
+            if let usersDataInDB = (allUsers.filter({$0.userName == userName}).isEmpty ? allUsers.filter({$0.userName == userName}) : (allUsers.filter({$0.userName == userName}))).first {
+                return usersDataInDB
+            }
+        }
+        return nil
+    }
+    
 }
