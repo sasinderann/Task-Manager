@@ -9,8 +9,13 @@ import Foundation
 import GoogleSignIn
 
 class LoginViewModel {
+    fileprivate var clientId = "880624567821-rissjt2bh6os7lcil2c9ogtjneso2dku.apps.googleusercontent.com"
+    static let shared = LoginViewModel(dataModel: UserDataManager())
+    var delegate : UserDataProtocol?
     
-    static let shared = LoginViewModel()
+    init(dataModel: UserDataProtocol) {
+         self.delegate = dataModel
+     }
     
     //    MARK: - Google Authentication
     func signInWithGoogleServices(viewController: UIViewController, getCompleted: @escaping(_ done: Bool, _ userInfo: UserModel?) -> ()) {
@@ -41,7 +46,7 @@ class LoginViewModel {
         let userDict : [String: Any] = [
             "access_token": userInfo.accessToken,
             "refresh_token": userInfo.refreshToken,
-            "client_id": "123",
+            "client_id": clientId,
             "grant_type": "refresh_token"]
         
         let googleTokenUrl = "https://oauth2.googleapis.com/token"
@@ -53,7 +58,7 @@ class LoginViewModel {
             .data(using: .utf8)
         
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        let dataTAsk = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error  in
+       URLSession.shared.dataTask(with: request as URLRequest) { data, response, error  in
             if let err = error {
                 print("--- Error in refreshing google token : \(err.localizedDescription) ---")
                 return isTokenRefreshed(false, userInfo)
@@ -80,4 +85,20 @@ class LoginViewModel {
     func loggedOutUser() {
         GIDSignIn.sharedInstance.signOut()
     }
+//    MARK: - DATA MANIPULATION DELEGATES
+    
+    func saveUserInfo(userData: UserModel?) {
+        if let data = userData {
+            delegate?.saveNewEntry(coreDataEntry: data)
+        }
+    }
+    
+    func updateUserInfo(userData: UserModel) {
+        delegate?.updateUserDetails(usrInfo: userData)
+    }
+    
+    func getUserDetails() -> [UserModel]? {
+        return delegate?.getLoggedInUsers()
+    }
+    
 }

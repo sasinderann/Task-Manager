@@ -63,7 +63,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="Ezb-vJ-Mss"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsd-cs-lSK">
@@ -97,12 +97,6 @@
                                                     <action selector="signBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jym-h5-gob"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thF-fC-dKE">
-                                                <rect key="frame" x="143" y="519" width="75" height="35"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New user? Create account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8G-KN-Mqu">
                                                 <rect key="frame" x="79.666666666666686" y="465" width="202" height="21"/>
                                                 <constraints>
@@ -112,6 +106,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GpL-rt-C2h" customClass="GIDSignInButton">
+                                                <rect key="frame" x="20" y="516" width="321" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="ZQg-MU-0sb"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -120,6 +121,7 @@
                                             <constraint firstItem="rVA-GA-gZH" firstAttribute="leading" secondItem="dor-Qt-bzC" secondAttribute="leading" constant="16" id="8Le-jT-OLF"/>
                                             <constraint firstItem="Gui-ba-PXT" firstAttribute="leading" secondItem="dor-Qt-bzC" secondAttribute="leading" constant="16" id="AJt-el-cyd"/>
                                             <constraint firstItem="UZI-P9-4Gy" firstAttribute="top" secondItem="Gui-ba-PXT" secondAttribute="bottom" constant="8" id="ChN-uU-fKB"/>
+                                            <constraint firstItem="GpL-rt-C2h" firstAttribute="leading" secondItem="dor-Qt-bzC" secondAttribute="leading" constant="20" id="Eyf-BV-vNB"/>
                                             <constraint firstItem="f1l-QK-LQk" firstAttribute="top" secondItem="UZI-P9-4Gy" secondAttribute="bottom" constant="100" id="GE3-TT-cNx"/>
                                             <constraint firstItem="C8G-KN-Mqu" firstAttribute="centerX" secondItem="dor-Qt-bzC" secondAttribute="centerX" id="GtF-Cm-wwW"/>
                                             <constraint firstItem="UZI-P9-4Gy" firstAttribute="leading" secondItem="dor-Qt-bzC" secondAttribute="leading" constant="16" id="LLa-uC-26C"/>
@@ -132,11 +134,14 @@
                                             <constraint firstAttribute="trailing" secondItem="UZI-P9-4Gy" secondAttribute="trailing" constant="16" id="RPa-P1-z8e"/>
                                             <constraint firstAttribute="trailing" secondItem="swn-Ze-gIK" secondAttribute="trailing" constant="16" id="RU8-EA-jZW"/>
                                             <constraint firstItem="RDw-Oe-nvp" firstAttribute="leading" secondItem="dor-Qt-bzC" secondAttribute="leading" constant="16" id="TQk-YA-Gfn"/>
+                                            <constraint firstItem="GpL-rt-C2h" firstAttribute="top" secondItem="C8G-KN-Mqu" secondAttribute="bottom" constant="30" id="Ynp-Fb-ZPh"/>
                                             <constraint firstItem="rVA-GA-gZH" firstAttribute="top" secondItem="f1l-QK-LQk" secondAttribute="bottom" constant="30" id="fui-Sb-Vc8"/>
+                                            <constraint firstItem="GpL-rt-C2h" firstAttribute="centerX" secondItem="dor-Qt-bzC" secondAttribute="centerX" id="gtQ-4G-eXR"/>
                                             <constraint firstItem="oE7-iX-J1p" firstAttribute="top" secondItem="RDw-Oe-nvp" secondAttribute="bottom" constant="24" id="lHe-ya-zpe"/>
                                             <constraint firstAttribute="height" constant="759" id="mU1-Lo-TMQ"/>
                                             <constraint firstItem="RDw-Oe-nvp" firstAttribute="top" secondItem="qsd-cs-lSK" secondAttribute="bottom" constant="8" id="nfS-4u-t4s"/>
                                             <constraint firstAttribute="trailing" secondItem="RDw-Oe-nvp" secondAttribute="trailing" constant="16" id="o5t-KC-Gfy"/>
+                                            <constraint firstAttribute="trailing" secondItem="GpL-rt-C2h" secondAttribute="trailing" constant="20" id="sHf-mK-qUl"/>
                                             <constraint firstItem="g3D-Na-Nvq" firstAttribute="top" secondItem="swn-Ze-gIK" secondAttribute="bottom" constant="8" id="sOM-mo-xLz"/>
                                             <constraint firstItem="swn-Ze-gIK" firstAttribute="leading" secondItem="dor-Qt-bzC" secondAttribute="leading" constant="16" id="vjT-Ea-urg"/>
                                             <constraint firstItem="qsd-cs-lSK" firstAttribute="leading" secondItem="dor-Qt-bzC" secondAttribute="leading" constant="16" id="x1y-rB-0Y8"/>
@@ -166,6 +171,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="googleSignInButtonView" destination="GpL-rt-C2h" id="h5U-pu-iKe"/>
                         <outlet property="outerView" destination="dor-Qt-bzC" id="Zmk-dV-9xq"/>
                         <outlet property="passwordField" destination="RDw-Oe-nvp" id="rpx-jh-a9S"/>
                         <outlet property="signInBtn" destination="oE7-iX-J1p" id="BmQ-Vk-Hxf"/>

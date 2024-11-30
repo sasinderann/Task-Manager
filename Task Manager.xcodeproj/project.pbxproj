@@ -27,6 +27,8 @@
 		94F9BCFF2CFA2B3E00629E78 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9BCFE2CFA2B3E00629E78 /* TaskModel.swift */; };
 		94F9BD012CFA3B2300629E78 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9BD002CFA3B2300629E78 /* UserModel.swift */; };
 		94F9BD042CFA456200629E78 /* Heplers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9BD032CFA456200629E78 /* Heplers.swift */; };
+		94FADD722CFB6FCE00187A4E /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FADD712CFB6FCE00187A4E /* UserDataManager.swift */; };
+		94FADD742CFB846500187A4E /* TaskDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FADD732CFB846400187A4E /* TaskDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		94F9BCFE2CFA2B3E00629E78 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		94F9BD002CFA3B2300629E78 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		94F9BD032CFA456200629E78 /* Heplers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heplers.swift; sourceTree = "<group>"; };
+		94FADD712CFB6FCE00187A4E /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		94FADD732CFB846400187A4E /* TaskDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				94F9BD032CFA456200629E78 /* Heplers.swift */,
+				94FADD712CFB6FCE00187A4E /* UserDataManager.swift */,
+				94FADD732CFB846400187A4E /* TaskDataManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -372,7 +378,9 @@
 			files = (
 				94E6915A2CF8C84C008A0E1F /* AppDelegate.swift in Sources */,
 				94E691952CF8DAE0008A0E1F /* LoginViewModel.swift in Sources */,
+				94FADD722CFB6FCE00187A4E /* UserDataManager.swift in Sources */,
 				94F9BCFF2CFA2B3E00629E78 /* TaskModel.swift in Sources */,
+				94FADD742CFB846500187A4E /* TaskDataManager.swift in Sources */,
 				94E691642CF8C84C008A0E1F /* Task_Manager.xcdatamodeld in Sources */,
 				94E6919D2CF8E2C8008A0E1F /* TaskManagerPage.swift in Sources */,
 				94F9BD042CFA456200629E78 /* Heplers.swift in Sources */,
