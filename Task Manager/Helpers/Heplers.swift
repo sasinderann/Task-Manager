@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 enum TaskDetailsCoreDataKeys: String {
- case taskName, taskDescription, date, priority, alarmReminderTime, isCompleted, userId
+ case taskName, taskDescription, date, priority, alarmReminderTime, isCompleted, userId, taskId
 }
 
 enum UserCoreDatakeys: String {
@@ -72,4 +72,10 @@ enum ToastType {
             return UIColor.systemYellow
         }
     }
+}
+
+
+enum SortType: String{
+    case priority = "Priority"
+    case dateAdded = "Date Added"
 }

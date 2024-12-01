@@ -11,10 +11,11 @@ struct TaskModel: Codable {
     var taskName: String = ""
     var taskDescription: String = ""
     var date: Date = Date()
-    var priority: Int = 1 // 1- normal, 2 - high , 3 - high
+    var priority: Int = 1 // 1- normal, 2 - high , 3 - urgent
     var alarmReminderTime: Int = 0
     var isCompleted: Bool = false
     var userId: Int64 = 0
+    var taskId: Int64 = 0
     
     static func decodeCoreDataKeys(coreDataJson: [[String:Any]]) -> [TaskModel] {
         var taskItems : [TaskModel] = []
@@ -41,6 +42,9 @@ struct TaskModel: Codable {
             }
             if let userId = dict[TaskDetailsCoreDataKeys.userId.rawValue] as? Int64 {
                 taskItem.userId = userId
+            }
+            if let taskId = dict[TaskDetailsCoreDataKeys.taskId.rawValue] as? Int64 {
+                taskItem.taskId = taskId
             }
             taskItems.append(taskItem)
         }

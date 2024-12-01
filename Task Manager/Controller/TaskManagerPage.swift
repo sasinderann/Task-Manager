@@ -6,3 +6,60 @@
 //
 
 import Foundation
+import UIKit
+
+class TaskManagerPage : UIViewController {
+    @IBOutlet var outerView: UIView!
+    @IBOutlet weak var innerView: UIView!
+    @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var createTaskBtn: UIView!
+    
+    override func viewDidLoad() {
+        configureView()
+        super.viewDidLoad()
+    }
+    
+    func configureView() {
+        createTaskBtn.layer.cornerRadius = 8
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(createTaskBtnClicked))
+        createTaskBtn.addGestureRecognizer(tapGesture)
+        // Register TBl cells
+        tblView.delegate = self
+        tblView.dataSource = self
+        tblView.register(TaskViewCell.self, forCellReuseIdentifier: "taskCell")
+        tblView.register(UserViewCell.self, forCellReuseIdentifier: "userCell")
+        tblView.register(SortViewCell.self, forCellReuseIdentifier: "sortCell")
+    }
+    
+    @objc  func createTaskBtnClicked() {
+        
+    }
+    
+}
+
+extension TaskManagerPage : UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section == 2 ? 10 : 1
+     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3 // 0 -- UserInfo // 1 -- sorting // 2 -- tasks
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserViewCell {
+                return cell
+            }
+        } else if indexPath.section == 1 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "sortCell", for: indexPath) as? SortViewCell {
+                return cell
+            }
+        } else {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskViewCell {
+                return cell
+            }
+        }
+        return UITableViewCell()
+    }
+}
