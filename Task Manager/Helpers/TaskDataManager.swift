@@ -20,8 +20,8 @@ class TaskDataManager: TaskDataManagerProtocol {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TaskDetailsTable")
         fetchRequest.returnsDistinctResults = true
         fetchRequest.resultType = .dictionaryResultType
-        let userIdPredicate = NSPredicate(format: "userId == %@", userId)
-        fetchRequest.predicate = userIdPredicate
+//        let userIdPredicate = NSPredicate(format: "userId == %@", userId) //TODO: FIX
+//        fetchRequest.predicate = userIdPredicate
         
         do {
             if let tasks = try managedContext?.fetch(fetchRequest) as? [[String:Any]] {

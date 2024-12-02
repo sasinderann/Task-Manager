@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		943212682CFE150300B99605 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943212672CFE150300B99605 /* UserDefaults.swift */; };
+		9432126A2CFE19B400B99605 /* NewTaskCreationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943212692CFE19B400B99605 /* NewTaskCreationPage.swift */; };
 		94D823162CFCBC0700A48612 /* TaskManagerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D823152CFCBC0700A48612 /* TaskManagerPage.swift */; };
 		94D823182CFCC51900A48612 /* AppLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D823172CFCC51900A48612 /* AppLogo.png */; };
 		94D8231C2CFCCC9F00A48612 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8231A2CFCCC9F00A48612 /* UserViewCell.swift */; };
 		94D8231D2CFCCC9F00A48612 /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D8231B2CFCCC9F00A48612 /* UserViewCell.xib */; };
 		94D823212CFCCFDF00A48612 /* SortViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8231F2CFCCFDF00A48612 /* SortViewCell.swift */; };
 		94D823222CFCCFDF00A48612 /* SortViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D823202CFCCFDF00A48612 /* SortViewCell.xib */; };
-		94D823242CFCD4C200A48612 /* TaskManagerpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D823232CFCD4C200A48612 /* TaskManagerpage.swift */; };
+		94D823242CFCD4C200A48612 /* TaskManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D823232CFCD4C200A48612 /* TaskManagerViewModel.swift */; };
 		94E6915A2CF8C84C008A0E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E691592CF8C84C008A0E1F /* AppDelegate.swift */; };
 		94E6915C2CF8C84C008A0E1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E6915B2CF8C84C008A0E1F /* SceneDelegate.swift */; };
 		94E691612CF8C84C008A0E1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94E6915F2CF8C84C008A0E1F /* Main.storyboard */; };
@@ -54,13 +56,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		943212672CFE150300B99605 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		943212692CFE19B400B99605 /* NewTaskCreationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskCreationPage.swift; sourceTree = "<group>"; };
 		94D823152CFCBC0700A48612 /* TaskManagerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerPage.swift; sourceTree = "<group>"; };
 		94D823172CFCC51900A48612 /* AppLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppLogo.png; path = ../../../Downloads/AppLogo.png; sourceTree = "<group>"; };
 		94D8231A2CFCCC9F00A48612 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		94D8231B2CFCCC9F00A48612 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
 		94D8231F2CFCCFDF00A48612 /* SortViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewCell.swift; sourceTree = "<group>"; };
 		94D823202CFCCFDF00A48612 /* SortViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortViewCell.xib; sourceTree = "<group>"; };
-		94D823232CFCD4C200A48612 /* TaskManagerpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerpage.swift; sourceTree = "<group>"; };
+		94D823232CFCD4C200A48612 /* TaskManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerViewModel.swift; sourceTree = "<group>"; };
 		94E691562CF8C84C008A0E1F /* Task Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E691592CF8C84C008A0E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94E6915B2CF8C84C008A0E1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,7 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				94E691942CF8DAE0008A0E1F /* LoginViewModel.swift */,
-				94D823232CFCD4C200A48612 /* TaskManagerpage.swift */,
+				94D823232CFCD4C200A48612 /* TaskManagerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -218,6 +222,7 @@
 			children = (
 				94E691922CF8D881008A0E1F /* LoginPage.swift */,
 				94D823152CFCBC0700A48612 /* TaskManagerPage.swift */,
+				943212692CFE19B400B99605 /* NewTaskCreationPage.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				94F9BD032CFA456200629E78 /* Heplers.swift */,
 				94FADD712CFB6FCE00187A4E /* UserDataManager.swift */,
 				94FADD732CFB846400187A4E /* TaskDataManager.swift */,
+				943212672CFE150300B99605 /* UserDefaults.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -405,10 +411,12 @@
 				94E691952CF8DAE0008A0E1F /* LoginViewModel.swift in Sources */,
 				94D823212CFCCFDF00A48612 /* SortViewCell.swift in Sources */,
 				94FADD722CFB6FCE00187A4E /* UserDataManager.swift in Sources */,
+				943212682CFE150300B99605 /* UserDefaults.swift in Sources */,
 				94D823162CFCBC0700A48612 /* TaskManagerPage.swift in Sources */,
 				94F9BCFF2CFA2B3E00629E78 /* TaskModel.swift in Sources */,
 				94FADD742CFB846500187A4E /* TaskDataManager.swift in Sources */,
-				94D823242CFCD4C200A48612 /* TaskManagerpage.swift in Sources */,
+				9432126A2CFE19B400B99605 /* NewTaskCreationPage.swift in Sources */,
+				94D823242CFCD4C200A48612 /* TaskManagerViewModel.swift in Sources */,
 				94E691642CF8C84C008A0E1F /* Task_Manager.xcdatamodeld in Sources */,
 				94D8231C2CFCCC9F00A48612 /* UserViewCell.swift in Sources */,
 				94F9BD042CFA456200629E78 /* Heplers.swift in Sources */,

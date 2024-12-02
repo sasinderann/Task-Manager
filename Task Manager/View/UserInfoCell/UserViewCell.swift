@@ -25,13 +25,17 @@ class UserViewCell: UITableViewCell {
     }
     
     func loadTableData(userImg: String, name: String, email: String, completed: Int, inProgress: Int) {
-        if let url = URL(string: userImg), let data = try? Data(contentsOf: url) {
-            userImage.image = UIImage(data: data)
+        DispatchQueue.global().async {
+            if let url = URL(string: userImg), let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+//                    self.userImage.image = UIImage(data: data)
+                }
+            }
         }
-        userName.text = name
-        emailId.text = email
-        completedLbl.text = "Completed: \(completed)"
-        inProgressLbl.text = "In-progress: \(inProgress)"
+//        userName.text = name
+//        emailId.text = email
+//        completedLbl.text = "Completed: \(completed)"
+//        inProgressLbl.text = "In-progress: \(inProgress)"
     }
     
 }

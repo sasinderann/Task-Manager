@@ -14,6 +14,7 @@ class TaskManagerPage : UIViewController {
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var createTaskBtn: UIView!
     
+    let viewModel = TaskManagerViewModel.shared
     override func viewDidLoad() {
         configureView()
         super.viewDidLoad()
@@ -32,14 +33,15 @@ class TaskManagerPage : UIViewController {
     }
     
     @objc  func createTaskBtnClicked() {
-        
+        if let taskCreationPage = self.storyboard?.instantiateViewController(withIdentifier: "newTaskCreationPage") as? NewTaskCreationPage {
+            self.navigationController?.present(taskCreationPage, animated: true)
+        }
     }
-    
 }
 
 extension TaskManagerPage : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 2 ? 10 : 1
+        return section == 2 ? viewModel.allTasks.count : 1
      }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,14 +51,20 @@ extension TaskManagerPage : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserViewCell {
+                if let currentUser = viewModel.delegate?.getCurrentUser() {
+                    cell.loadTableData(userImg: currentUser.userImageUrl, name: currentUser.userName, email: currentUser.userEmail, completed: 100, inProgress: 100)
+                }
                 return cell
             }
         } else if indexPath.section == 1 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "sortCell", for: indexPath) as? SortViewCell {
+                cell.sortBy = .dateAdded
                 return cell
             }
         } else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskViewCell {
+                let task = viewModel.allTasks[indexPath.row]
+                cell.setTaskDetails(name: task.taskName, date: task.date, priorityLvl: task.priority, isAlarmEnable: task.alarmReminderTime != 0)
                 return cell
             }
         }

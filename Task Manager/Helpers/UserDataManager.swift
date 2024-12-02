@@ -15,6 +15,22 @@ extension CoreDataSetupProtocol {
     var managedContext : NSManagedObjectContext? {
         return (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     }
+    
+    func getCurrentUser() -> UserModel? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDetailTable")
+        fetchRequest.returnsDistinctResults = true
+        fetchRequest.resultType = .dictionaryResultType
+//        let userIdPredicate = NSPredicate(format: "userId == %@", UserDefault.currentAccountId) // TODO: FIx me
+//        fetchRequest.predicate = userIdPredicate
+        do {
+            if let users = try self.managedContext?.fetch(fetchRequest)  as? [[String:Any]] {
+                return UserModel.decodeCoreDataJsonResponse(userJson: users).first
+            }
+        } catch {
+            return nil
+        }
+        return nil
+    }
 }
 
 protocol UserDataProtocol: CoreDataSetupProtocol {

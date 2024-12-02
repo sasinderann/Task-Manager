@@ -102,11 +102,11 @@ class LoginViewModel {
     }
     
     // check with google user name first then check with
-    func validateUser(userName: String, password: String) -> Bool {
+    func validateUser(userName: String, password: String) -> (Bool, Int64) {
         if let user = getUserFor(userName: userName) {
-            return user.passWord == password
+            return (user.passWord == password, user.userId)
         }
-        return false
+        return (false, 0)
     }
     
     func getUserFor(userName: String) -> UserModel? {

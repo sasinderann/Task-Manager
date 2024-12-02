@@ -38,14 +38,11 @@ class LoginPage : UIViewController {
     
     @IBAction func signBtnClicked(_ sender: Any) {
         if let userName = userNameField.text, let password = passwordField.text {
-            if viewModel.validateUser(userName: userName, password: password) {
+            let isValid = viewModel.validateUser(userName: userName, password: password)
+            if isValid.0 {
+                UserDefault.currentAccountId = isValid.1
                 print("--- Login Success ---")
                 DispatchQueue.main.async {
-                    if self.navigationController == nil {
-                        print("Navigation Controller is nil")
-                    } else {
-                        print("Navigation Controller is present")
-                    }
                     if let taskManagerPage = self.storyboard?.instantiateViewController(withIdentifier: "taskManagerId") as? TaskManagerPage {
                         print("Page ")
                         self.navigationController?.pushViewController(taskManagerPage, animated: true)

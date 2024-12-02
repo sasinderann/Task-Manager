@@ -10,10 +10,16 @@ import Foundation
 class TaskManagerViewModel {
     
     static let shared = TaskManagerViewModel(dataModel: TaskDataManager())
+    private init() {}
     var delegate : TaskDataManager?
+    var allTasks = [TaskModel]()
     
     init(dataModel: TaskDataManager) {
-         self.delegate = dataModel
-     }
+        self.delegate = dataModel
+        getAllTasks()
+    }
     
+    func getAllTasks() {
+        allTasks = delegate?.getAllTasksForUser(userId: UserDefault.currentAccountId) ?? []
+    }
 }
