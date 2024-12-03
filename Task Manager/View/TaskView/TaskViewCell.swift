@@ -8,7 +8,7 @@
 import UIKit
 
 
-class TaskViewCell: UITableViewCell {
+class TaskViewCell: UITableViewCell, Identifiable {
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskDate: UILabel!
     @IBOutlet weak var priority: UIButton!

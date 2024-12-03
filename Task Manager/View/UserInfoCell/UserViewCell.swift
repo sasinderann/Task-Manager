@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserViewCell: UITableViewCell {
+class UserViewCell: UITableViewCell, Identifiable {
 
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -28,14 +28,14 @@ class UserViewCell: UITableViewCell {
         DispatchQueue.global().async {
             if let url = URL(string: userImg), let data = try? Data(contentsOf: url) {
                 DispatchQueue.main.async {
-//                    self.userImage.image = UIImage(data: data)
+                    self.userImage.image = UIImage(data: data)
                 }
             }
         }
-//        userName.text = name
-//        emailId.text = email
-//        completedLbl.text = "Completed: \(completed)"
-//        inProgressLbl.text = "In-progress: \(inProgress)"
+        userName.text = name
+        emailId.text = email
+        completedLbl.text = "Completed: \(completed)"
+        inProgressLbl.text = "In-progress: \(inProgress)"
     }
     
 }

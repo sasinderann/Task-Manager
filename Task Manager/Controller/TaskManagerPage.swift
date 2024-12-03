@@ -14,10 +14,11 @@ class TaskManagerPage : UIViewController {
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var createTaskBtn: UIView!
     
-    let viewModel = TaskManagerViewModel.shared
+    let viewModel = TaskManagerViewModel(dataModel: TaskDataManager())
+    
     override func viewDidLoad() {
-        configureView()
         super.viewDidLoad()
+        configureView()
     }
     
     func configureView() {
@@ -59,6 +60,7 @@ extension TaskManagerPage : UITableViewDataSource, UITableViewDelegate {
         } else if indexPath.section == 1 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "sortCell", for: indexPath) as? SortViewCell {
                 cell.sortBy = .dateAdded
+                cell.sortBtnClicked()
                 return cell
             }
         } else {

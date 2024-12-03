@@ -20,8 +20,8 @@ extension CoreDataSetupProtocol {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserDetailTable")
         fetchRequest.returnsDistinctResults = true
         fetchRequest.resultType = .dictionaryResultType
-//        let userIdPredicate = NSPredicate(format: "userId == %@", UserDefault.currentAccountId) // TODO: FIx me
-//        fetchRequest.predicate = userIdPredicate
+        let userIdPredicate = NSPredicate(format: "userId == %@", NSNumber(value: UserDefault.currentAccountId))
+        fetchRequest.predicate = userIdPredicate
         do {
             if let users = try self.managedContext?.fetch(fetchRequest)  as? [[String:Any]] {
                 return UserModel.decodeCoreDataJsonResponse(userJson: users).first
@@ -82,7 +82,7 @@ class UserDataManager : UserDataProtocol {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UserDetailTable")
         fetchRequest.returnsDistinctResults = true
         fetchRequest.resultType = .dictionaryResultType
-        let userIdPredicate = NSPredicate(format: "userId == %@", usrInfo.userId)
+        let userIdPredicate = NSPredicate(format: "userId == %@", NSNumber(value: usrInfo.userId))
         fetchRequest.predicate = userIdPredicate
         do {
             if let users = try managedContext?.fetch(fetchRequest), let user = users.first {

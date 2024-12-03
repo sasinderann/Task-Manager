@@ -10,7 +10,6 @@ import GoogleSignIn
 
 class LoginViewModel {
     fileprivate var clientId = "880624567821-rissjt2bh6os7lcil2c9ogtjneso2dku.apps.googleusercontent.com"
-    static let shared = LoginViewModel(dataModel: UserDataManager())
     var delegate : UserDataProtocol?
     
     init(dataModel: UserDataProtocol) {

@@ -18,7 +18,7 @@ class LoginPage : UIViewController {
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var googleSignInButtonView: GIDSignInButton!
     
-    var viewModel : LoginViewModel = LoginViewModel.shared
+    var viewModel : LoginViewModel = LoginViewModel(dataModel: UserDataManager())
     
     override func viewDidLoad() {
         super.viewDidLoad()

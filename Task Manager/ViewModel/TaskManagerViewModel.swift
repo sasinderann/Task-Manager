@@ -9,8 +9,6 @@ import Foundation
 
 class TaskManagerViewModel {
     
-    static let shared = TaskManagerViewModel(dataModel: TaskDataManager())
-    private init() {}
     var delegate : TaskDataManager?
     var allTasks = [TaskModel]()
     

@@ -11,7 +11,7 @@ protocol SortTaskDelegate {
     func sortTaskData(type: SortType)
 }
 
-class SortViewCell: UITableViewCell {
+class SortViewCell: UITableViewCell, Identifiable {
 
     @IBOutlet weak var sortLbl: UILabel!
     @IBOutlet weak var sortIcon: UIImageView!
